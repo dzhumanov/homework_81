@@ -49,7 +49,7 @@ function App() {
   };
 
   return (
-    <div className="container w-50 text-center">
+    <div className="container w-50 text-center appMain">
       <h1>Shorten your link!</h1>
       <form onSubmit={onFormSubmit}>
         <input

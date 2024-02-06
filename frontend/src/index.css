@@ -1,3 +1,17 @@
 .btn {
   user-select: auto;
 }
+
+#root {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.appMain {
+  height: 300px;
+  border: 3px solid red;
+  border-radius: 15px;
+}
