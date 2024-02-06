@@ -8,12 +8,24 @@ function App() {
   const [showText, setShowText] = useState(false);
   const [visibleShort, setVisibleShort] = useState("");
 
+  const isValidUrl = (url: string) => {
+    const pattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
+    return pattern.test(url);
+  };
+
   const onFormSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
+
+    if (!isValidUrl(inputValue)) {
+      alert("Invalid URL! Must type with 'http'.");
+      console.error("Invalid URL");
+      return;
+    }
+
     const data = {
       url: inputValue,
     };
-    console.log(data);
+
     try {
       const response = await axiosApi.post("links", data);
       setShortUrl(response.data.shortUrl);
